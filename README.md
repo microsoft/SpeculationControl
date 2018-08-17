@@ -11,7 +11,7 @@ The released version of this script is maintained through the [SpeculationContro
 To install the released version via PowerShell Gallery:
 
 ```
-PS C:\> Import-Module .\SpeculationControl.psd1
+PS C:\> Install-Module .\SpeculationControl.psd1
 ```
 
 To query the state of configurable mitigations:
