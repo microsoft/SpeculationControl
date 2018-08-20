@@ -34,7 +34,7 @@
 
     try {
    
-        $cpu = Get-CimInstance Win32_Processor
+        $cpu = Get-WmiObject Win32_Processor
 
         if ($cpu -is [array]) {
             $cpu = $cpu[0]
@@ -234,7 +234,7 @@
 
             $l1tfRequired = $kvaShadowRequired
 
-            $l1tfInvalidPteBit = ($flags -band $l1tfInvalidPteBitMask) -shr $l1tfInvalidPteBitShift
+            $l1tfInvalidPteBit = [math]::Floor(($flags -band $l1tfInvalidPteBitMask) * [math]::Pow(2,-$l1tfInvalidPteBitShift))
 
             $l1tfMitigationEnabled = ($l1tfInvalidPteBit -ne 0)
             $l1tfFlushSupported = (($flags -band $l1tfFlushSupportedFlag) -ne 0)
@@ -356,7 +356,7 @@
             $guidanceType = ""
 
             
-            $os = Get-CimInstance Win32_OperatingSystem
+            $os = Get-WmiObject Win32_OperatingSystem
 
             if ($os.ProductType -eq 1) {
                 # Workstation
