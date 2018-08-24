@@ -11,7 +11,7 @@ The released version of this script is maintained through the [SpeculationContro
 To install the released version via PowerShell Gallery:
 
 ```
-PS C:\> Install-Module .\SpeculationControl.psd1
+PS C:\> Install-Module -Name SpeculationControl
 ```
 
 To query the state of configurable mitigations:
@@ -29,7 +29,7 @@ PS> Set-ExecutionPolicy $SaveExecutionPolicy -Scope Currentuser
 The following provides an example usage and output for this tool.
 
 ```
-PS C:\> Import-Module .\SpeculationControl.psd1
+PS C:\> Import-Module SpeculationControl
 PS C:\> Get-SpeculationControlSettings
 For more information about the output below, please refer to https://support.microsoft.com/en-in/help/4074629
 
