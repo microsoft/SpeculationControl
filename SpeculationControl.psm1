@@ -1,4 +1,4 @@
-﻿function Get-SpeculationControlSettings {
+function Get-SpeculationControlSettings {
   <#
 
   .SYNOPSIS
@@ -116,18 +116,18 @@
             }
 
             if ($Quiet -ne $true -and $PSBoundParameters['Verbose']) {
-                Write-Host "BpbEnabled                   :" (($flags -band $scfBpbEnabled) -ne 0)
-                Write-Host "BpbDisabledSystemPolicy      :" (($flags -band $scfBpbDisabledSystemPolicy) -ne 0)
-                Write-Host "BpbDisabledNoHardwareSupport :" (($flags -band $scfBpbDisabledNoHardwareSupport) -ne 0)
-                Write-Host "HwReg1Enumerated             :" (($flags -band $scfHwReg1Enumerated) -ne 0)
-                Write-Host "HwReg2Enumerated             :" (($flags -band $scfHwReg2Enumerated) -ne 0)
-                Write-Host "HwMode1Present               :" (($flags -band $scfHwMode1Present) -ne 0)
-                Write-Host "HwMode2Present               :" (($flags -band $scfHwMode2Present) -ne 0)
-                Write-Host "SmepPresent                  :" (($flags -band $scfSmepPresent) -ne 0)
-                Write-Host "SsbdAvailable                :" (($flags -band $scfSsbdAvailable) -ne 0)
-                Write-Host "SsbdSupported                :" (($flags -band $scfSsbdSupported) -ne 0)
-                Write-Host "SsbdSystemWide               :" (($flags -band $scfSsbdSystemWide) -ne 0)
-                Write-Host "SsbdRequired                 :" (($flags -band $scfSsbdRequired) -ne 0)
+                Write-Verbose "BpbEnabled                   :" (($flags -band $scfBpbEnabled) -ne 0)
+                Write-Verbose "BpbDisabledSystemPolicy      :" (($flags -band $scfBpbDisabledSystemPolicy) -ne 0)
+                Write-Verbose "BpbDisabledNoHardwareSupport :" (($flags -band $scfBpbDisabledNoHardwareSupport) -ne 0)
+                Write-Verbose "HwReg1Enumerated             :" (($flags -band $scfHwReg1Enumerated) -ne 0)
+                Write-Verbose "HwReg2Enumerated             :" (($flags -band $scfHwReg2Enumerated) -ne 0)
+                Write-Verbose "HwMode1Present               :" (($flags -band $scfHwMode1Present) -ne 0)
+                Write-Verbose "HwMode2Present               :" (($flags -band $scfHwMode2Present) -ne 0)
+                Write-Verbose "SmepPresent                  :" (($flags -band $scfSmepPresent) -ne 0)
+                Write-Verbose "SsbdAvailable                :" (($flags -band $scfSsbdAvailable) -ne 0)
+                Write-Verbose "SsbdSupported                :" (($flags -band $scfSsbdSupported) -ne 0)
+                Write-Verbose "SsbdSystemWide               :" (($flags -band $scfSsbdSystemWide) -ne 0)
+                Write-Verbose "SsbdRequired                 :" (($flags -band $scfSsbdRequired) -ne 0)
             }
         }
 
@@ -246,15 +246,15 @@
             }
 
             if ($Quiet -ne $true -and $PSBoundParameters['Verbose']) {
-                Write-Host "KvaShadowEnabled             :" (($flags -band $kvaShadowEnabledFlag) -ne 0)
-                Write-Host "KvaShadowUserGlobal          :" (($flags -band $kvaShadowUserGlobalFlag) -ne 0)
-                Write-Host "KvaShadowPcid                :" (($flags -band $kvaShadowPcidFlag) -ne 0)
-                Write-Host "KvaShadowInvpcid             :" (($flags -band $kvaShadowInvpcidFlag) -ne 0)
-                Write-Host "KvaShadowRequired            :" $kvaShadowRequired
-                Write-Host "KvaShadowRequiredAvailable   :" (($flags -band $kvaShadowRequiredAvailableFlag) -ne 0)
-                Write-Host "L1tfRequired                 :" $l1tfRequired
-                Write-Host "L1tfInvalidPteBit            :" $l1tfInvalidPteBit
-                Write-Host "L1tfFlushSupported           :" $l1tfFlushSupported
+                Write-Verbose "KvaShadowEnabled             :" (($flags -band $kvaShadowEnabledFlag) -ne 0)
+                Write-Verbose "KvaShadowUserGlobal          :" (($flags -band $kvaShadowUserGlobalFlag) -ne 0)
+                Write-Verbose "KvaShadowPcid                :" (($flags -band $kvaShadowPcidFlag) -ne 0)
+                Write-Verbose "KvaShadowInvpcid             :" (($flags -band $kvaShadowInvpcidFlag) -ne 0)
+                Write-Verbose "KvaShadowRequired            :" $kvaShadowRequired
+                Write-Verbose "KvaShadowRequiredAvailable   :" (($flags -band $kvaShadowRequiredAvailableFlag) -ne 0)
+                Write-Verbose "L1tfRequired                 :" $l1tfRequired
+                Write-Verbose "L1tfInvalidPteBit            :" $l1tfInvalidPteBit
+                Write-Verbose "L1tfFlushSupported           :" $l1tfFlushSupported
             }
         }
         
