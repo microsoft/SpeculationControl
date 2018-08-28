@@ -33,8 +33,12 @@
     $object = New-Object -TypeName PSObject
 
     try {
-   
-        $cpu = Get-WmiObject Win32_Processor
+        if ($PSVersionTable.PSVersion -lt [System.Version]("3.0.0.0")) {
+            $cpu = Get-WmiObject Win32_Processor
+        }
+        else {
+            $cpu = Get-CimInstance Win32_Processor
+        }
 
         if ($cpu -is [array]) {
             $cpu = $cpu[0]
@@ -355,8 +359,12 @@
             $guidanceUri = ""
             $guidanceType = ""
 
-            
-            $os = Get-WmiObject Win32_OperatingSystem
+            if ($PSVersionTable.PSVersion -lt [System.Version]("3.0.0.0")) {
+                $os = Get-WmiObject Win32_OperatingSystem
+            }
+            else {
+                $os = Get-CimInstance Win32_OperatingSystem
+            }
 
             if ($os.ProductType -eq 1) {
                 # Workstation
