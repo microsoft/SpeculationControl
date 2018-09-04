@@ -137,8 +137,8 @@ function Get-SpeculationControlSettings {
             Write-Host "Windows OS support for branch target injection mitigation is enabled:"($btiWindowsSupportEnabled)
   
             if ($btiWindowsSupportPresent -eq $true -and $btiWindowsSupportEnabled -eq $false) {
-                Write-Host -ForegroundColor Red "Windows OS support for branch target injection mitigation is disabled by system policy:"($btiDisabledBySystemPolicy)
-                Write-Host -ForegroundColor Red "Windows OS support for branch target injection mitigation is disabled by absence of hardware support:"($btiDisabledByNoHardwareSupport)
+                Write-Host "Windows OS support for branch target injection mitigation is disabled by system policy:"($btiDisabledBySystemPolicy)
+                Write-Host "Windows OS support for branch target injection mitigation is disabled by absence of hardware support:"($btiDisabledByNoHardwareSupport)
             }
         }
         
@@ -236,7 +236,7 @@ function Get-SpeculationControlSettings {
 
             $l1tfInvalidPteBit = ($flags -band $l1tfInvalidPteBitMask) -shr $l1tfInvalidPteBitShift
 
-            $l1tfMitigationEnabled = ($l1tfInvalidPteBit -ne 0)
+            $l1tfMitigationEnabled = (($l1tfInvalidPteBit -ne 0) -and ($kvaShadowEnabled -eq $true))
             $l1tfFlushSupported = (($flags -band $l1tfFlushSupportedFlag) -ne 0)
 
             if (($flags -band $l1tfMitigationPresentFlag) -or
