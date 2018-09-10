@@ -33,8 +33,12 @@ function Get-SpeculationControlSettings {
     $object = New-Object -TypeName PSObject
 
     try {
-   
-        $cpu = Get-CimInstance Win32_Processor
+        if ($PSVersionTable.PSVersion -lt [System.Version]("3.0.0.0")) {
+            $cpu = Get-WmiObject Win32_Processor
+        }
+        else {
+            $cpu = Get-CimInstance Win32_Processor
+        }
 
         if ($cpu -is [array]) {
             $cpu = $cpu[0]
@@ -234,7 +238,7 @@ function Get-SpeculationControlSettings {
 
             $l1tfRequired = $kvaShadowRequired
 
-            $l1tfInvalidPteBit = ($flags -band $l1tfInvalidPteBitMask) -shr $l1tfInvalidPteBitShift
+            $l1tfInvalidPteBit = [math]::Floor(($flags -band $l1tfInvalidPteBitMask) * [math]::Pow(2,-$l1tfInvalidPteBitShift))
 
             $l1tfMitigationEnabled = (($l1tfInvalidPteBit -ne 0) -and ($kvaShadowEnabled -eq $true))
             $l1tfFlushSupported = (($flags -band $l1tfFlushSupportedFlag) -ne 0)
@@ -355,8 +359,12 @@ function Get-SpeculationControlSettings {
             $guidanceUri = ""
             $guidanceType = ""
 
-            
-            $os = Get-CimInstance Win32_OperatingSystem
+            if ($PSVersionTable.PSVersion -lt [System.Version]("3.0.0.0")) {
+                $os = Get-WmiObject Win32_OperatingSystem
+            }
+            else {
+                $os = Get-CimInstance Win32_OperatingSystem
+            }
 
             if ($os.ProductType -eq 1) {
                 # Workstation
