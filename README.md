@@ -6,7 +6,7 @@ For an explanation on how to interpret the output of this tool, please see [Unde
 
 # Usage
 
-The released version of this script is maintained through the [SpeculationControl](https://www.powershellgallery.com/packages/SpeculationControl) module on PowerShell Gallery. A standlone version can also be obtained through [Technet ScriptCenter](https://aka.ms/SpeculationControlPS).
+The released version of this script is maintained through the [SpeculationControl](https://www.powershellgallery.com/packages/SpeculationControl) module on PowerShell Gallery.
 
 To install the released version via PowerShell Gallery:
 
@@ -65,6 +65,8 @@ BTIWindowsSupportPresent            : True
 BTIWindowsSupportEnabled            : True
 BTIDisabledBySystemPolicy           : False
 BTIDisabledByNoHardwareSupport      : False
+BTIRetpolineEnabled                 : True
+BTIImportOptimizationEnabled        : True
 KVAShadowRequired                   : True
 KVAShadowWindowsSupportPresent      : True
 KVAShadowWindowsSupportEnabled      : True
