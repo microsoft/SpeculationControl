@@ -66,7 +66,7 @@ BTIWindowsSupportEnabled            : True
 BTIDisabledBySystemPolicy           : False
 BTIDisabledByNoHardwareSupport      : False
 BTIKernelRetpolineEnabled           : True
-BTIKernelmportOptimizationEnabled   : True
+BTIKernelImportOptimizationEnabled  : True
 KVAShadowRequired                   : True
 KVAShadowWindowsSupportPresent      : True
 KVAShadowWindowsSupportEnabled      : True
