@@ -59,6 +59,11 @@ Hardware is vulnerable to L1 terminal fault: True
 Windows OS support for L1 terminal fault mitigation is present: True
 Windows OS support for L1 terminal fault mitigation is enabled: True
 
+Speculation control settings for MDS [microarchitectural data sampling]
+
+Windows OS support for MDS mitigation is present: True
+Hardware is vulnerable to MDS: True
+Windows OS support for MDS mitigation is enabled: True
 
 BTIHardwarePresent                  : True
 BTIWindowsSupportPresent            : True
@@ -80,6 +85,9 @@ L1TFWindowsSupportPresent           : True
 L1TFWindowsSupportEnabled           : True
 L1TFInvalidPteBit                   : 45
 L1DFlushSupported                   : False
+MDSWindowsSupportPresent            : True
+MDSHardwareVulnerable               : True
+MDSWindowsSupportEnabled            : True
 ```
 
 # Contributing
