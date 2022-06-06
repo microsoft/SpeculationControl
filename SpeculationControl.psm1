@@ -18,14 +18,14 @@ function Get-SpeculationControlSettings {
   )
   
   process {
-
-    $NtQSIDefinition = @'
-    [DllImport("ntdll.dll")]
-    public static extern int NtQuerySystemInformation(uint systemInformationClass, IntPtr systemInformation, uint systemInformationLength, IntPtr returnLength);
-'@
-    
-    $ntdll = Add-Type -MemberDefinition $NtQSIDefinition -Name 'ntdll' -Namespace 'Win32' -PassThru
-
+    if ($(try { [bool]([Win32.ntdll] -as [Type]) }catch { $false })) {
+        Write-Verbose "Type [Win32.ntdll] already exist, using it now ..."
+        $ntdll = [Win32.ntdll]
+    } else {
+        Write-Verbose "Add-Type [Win32.ntdll] ..."
+        $NtQSIDefinition = '[DllImport("ntdll.dll")] public static extern int NtQuerySystemInformation(uint systemInformationClass, IntPtr systemInformation, uint systemInformationLength, IntPtr returnLength);'
+        $ntdll = Add-Type -MemberDefinition $NtQSIDefinition -Name 'ntdll' -Namespace 'Win32' -PassThru
+    }
 
     [System.IntPtr]$systemInformationPtr = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(4)
     [System.IntPtr]$returnLengthPtr = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(4)
