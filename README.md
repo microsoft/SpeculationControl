@@ -65,6 +65,25 @@ Windows OS support for MDS mitigation is present: True
 Hardware is vulnerable to MDS: True
 Windows OS support for MDS mitigation is enabled: True
 
+Speculation control settings for SBDR [shared buffers data read]
+
+Windows OS support for SBDR mitigation is present: True
+Hardware is vulnerable to SBDR: True
+Windows OS support for SBDR mitigation is enabled: True
+
+Speculation control settings for FBSDP [fill buffer stale data propagator]
+
+Windows OS support for FBSDP mitigation is present: True
+Hardware is vulnerable to FBSDP: True
+Windows OS support for FBSDP mitigation is enabled: True
+
+Speculation control settings for PSDP [primary stale data propagator]
+
+Windows OS support for PSDP mitigation is present: True
+Hardware is vulnerable to PSDP: True
+Windows OS support for PSDP mitigation is enabled: True
+
+
 BTIHardwarePresent                  : True
 BTIWindowsSupportPresent            : True
 BTIWindowsSupportEnabled            : True
@@ -88,6 +107,11 @@ L1DFlushSupported                   : False
 MDSWindowsSupportPresent            : True
 MDSHardwareVulnerable               : True
 MDSWindowsSupportEnabled            : True
+FBClearWindowsSupportPresent        : True
+SBDRSSDPHardwareVulnerable          : True
+FBSDPHardwareVulnerable             : True
+PSDPHardwareVulnerable              : True
+FBClearWindowsSupportEnabled        : True
 ```
 
 # Contributing
