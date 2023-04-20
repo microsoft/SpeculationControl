@@ -41,6 +41,10 @@ Windows OS support for branch target injection mitigation is enabled: True
 
 Speculation control settings for CVE-2017-5754 [rogue data cache load]
 
+Hardware is vulnerable to rogue data cache load: True
+Windows OS support for rogue data cache load mitigation is present: True
+Windows OS support for rogue data cache load mitigation is enabled: True
+
 Hardware requires kernel VA shadowing: True
 Windows OS support for kernel VA shadow is present: True
 Windows OS support for kernel VA shadow is enabled: True
@@ -91,6 +95,8 @@ BTIDisabledBySystemPolicy           : False
 BTIDisabledByNoHardwareSupport      : False
 BTIKernelRetpolineEnabled           : True
 BTIKernelImportOptimizationEnabled  : True
+RdclHardwareProtectedReported       : True
+RdclHardwareProtected               : False
 KVAShadowRequired                   : True
 KVAShadowWindowsSupportPresent      : True
 KVAShadowWindowsSupportEnabled      : True
@@ -104,6 +110,8 @@ L1TFWindowsSupportPresent           : True
 L1TFWindowsSupportEnabled           : True
 L1TFInvalidPteBit                   : 45
 L1DFlushSupported                   : False
+HvL1tfStatusAvailable               : True
+HvL1tfProcessorNotAffected          : True
 MDSWindowsSupportPresent            : True
 MDSHardwareVulnerable               : True
 MDSWindowsSupportEnabled            : True
